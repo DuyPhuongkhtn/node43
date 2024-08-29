@@ -28,5 +28,5 @@ jobs:
          rm -rf node43
          git clone https://github.com/DuyPhuongkhtn/node43.git
          cd node43
-         docker-compose up -d --build
+         docker build . -t check
          echo "Done build test"
