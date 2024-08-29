@@ -24,6 +24,7 @@ jobs:
     steps:
       - name: Pull image from docker hub
         run: |
+         cd ../../
          rm -rf node43
          git clone https://github.com/DuyPhuongkhtn/node43.git
          cd node43
