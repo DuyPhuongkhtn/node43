@@ -29,4 +29,4 @@ jobs:
          git clone https://github.com/DuyPhuongkhtn/node43.git
          cd node43
          docker-compose up -d --build
-         echo "Done build"
+         echo "Done build test"
