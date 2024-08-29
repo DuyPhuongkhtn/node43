@@ -11,18 +11,9 @@ on:
 
 jobs:
   deploy:
-    name: Deploying NodeJS Application
+    needs: build
     runs-on: self-hosted
-
     steps:
-      - uses: actions/checkout@v4
-      - name: deploying application to EC2
-        env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY  }}
-          HOSTNAME: ${{ secrets.SERVER_HOST  }}
-          USER_NAME: ${{ secrets.SERVER_USERNAME  }}
-
+      - name: Pull image from docker hub
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
           echo "Done"
